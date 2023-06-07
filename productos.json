@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "nombre": "Proteina 890g",
+        "precio": 1400,
+        "img": "imagenes/proteina.webp"       
+    },
+
+    {
+        "id": 2,
+        "nombre": "Creatina 890g",
+        "precio": 2000,
+        "img": "imagenes/creatina.webp"       
+    },
+
+    {
+        "id": 3,
+        "nombre": "Quemador de grasa 890g",
+        "precio": 1600,
+        "img": "imagenes/grasa.webp"       
+    },
+
+    {
+        "id": 4,
+        "nombre": "Ganador de masa 890g",
+        "precio": 2200,
+        "img": "imagenes/masa.webp"       
+    }
+]

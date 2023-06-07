@@ -1,6 +1,32 @@
 // CONTENEDOR DE TODOS LOS PRODUCTOS
 const listaProductos = document.querySelector('.contenedor-items')
 
+// SI SE DESEA AGREGAR MAS PRODUCTOS UNICAMENTE MODIFICAR EL ARCHIVO PRODUCTOS.JSON Y SE AGREGA AUTOMATICAMENTE
+
+// OBTENER LOS PRODUCTOS DEL JSON LOCAL
+const getProductos = async ()=> {
+    const response = await fetch("productos.json");
+    const productos = await response.json();
+    // PINTAR LOS PRODUCTOS DEL JSON LOCAL
+    productos.forEach((product)=>{
+        let content = document.createElement("div");
+        content.className = "item";
+        content.innerHTML = `
+            <img src="${product.img}" alt="proteina" class="img-item">
+            <div class="info-item">
+                <h2 class="titulo-item">${product.nombre}</h2>
+                <p class="precio-item">$${product.precio}</p>
+                <button class="boton-item">Agregar al carrito</button>
+            </div>
+        `;
+        listaProductos.append(content);
+    })
+};
+
+getProductos();
+
+
+
 // ARRAY DE LOS PRODUCTOS EN EL CARRITO
 
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
@@ -109,42 +135,3 @@ limpiarCarrito.addEventListener('click', e => {
     mostrarHTML()
 })
 
-// AJAX Y FETCH
-
-// const urlUsuarios = "https://jsonplaceholder.typicode.com/users";
-// const lista = document.querySelector('.info-item')
-// fetch(urlUsuarios)
-//     .then((response) => response.json())
-//     .then((data) => {
-//         data.forEach((usuario) => {
-//             const li = document.createElement('li');
-//             li.textContent = "Nombre: " + usuario.name + "Telefono: " + usuario.phone;
-//             lista.append(li);
-//         })
-//     })
-
-// async function traerProductos(){
-//     const url = "url de la api"
-
-//     try {
-//         const resultado = await fetch(url);
-//         const respuesta = await resultado.json();
-//         pintarProductos(respuesta);
-//     } catch (error){
-//         console.log(error);
-//     }
-// }
-
-// function pintarProductos(productos){
-//      const lista = document.querySelector('.info-item');
-//      productos.forEach((producto) => {
-//         const {title, price} = producto;
-//         producto.innerHTML += `
-//         ACA VA EL HTML QUE QUIERO INTRODUCIR 
-
-
-
-//         `
-//         lista.append(producto);
-//      })
-// }

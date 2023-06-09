@@ -72,11 +72,13 @@ header ul li a{
 
 .zona1{
     display: flex;
-    flex-grow: 1;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-image: url(imagenes/fondo.webp);
     background-size: cover;
     background-position: center center;   
@@ -113,7 +115,7 @@ footer{
     background-color: #ff00e1;
     width: 100%;
     height: 3rem;
-    margin-top: 8vh;
+    margin-top: auto;
 }
 
 footer p{
@@ -126,18 +128,19 @@ footer p{
 
 #presentacion{
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     position: relative;
     max-height: auto;
-    max-width: 520px;
+    max-width: 1000px;
 }
 
-#presentacion h1{
+#bienvenido h1{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     margin-top: 150px;
-    text-align: center;
     font-size: 60px;
-    color: #eee;
+    color: #ff00e1;
     width: 100%;
 }
 
@@ -145,19 +148,20 @@ footer p{
     display: flex;
     flex-direction: column;
     padding: 20px;
-    max-height: 370px;
+    max-height: 700px;
     max-width: 100%;
     margin: 10px;
-    border: 1px solid #eee;
-    background-color: transparent;
-    backdrop-filter: blur(20px);
+    border: 4px solid #d000ff;
+    background-color: rgba(0, 0, 0, 0.88);
+    border-radius: 10px;
     font-size: 15px;
 }
 
 #presentacion-contenido p{
     font-family: sans-serif;
-    color: #eee;
+    color: #ffffff;
     font-size: 14px;
+    padding: 1px;
 }
 
 #bienvenido{
@@ -166,7 +170,7 @@ footer p{
 
 #presentacion-titulo{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: #eee;
+    color: #ffffff;
 }
 
 #planes-titulo{
@@ -177,6 +181,133 @@ footer p{
     align-items: center;
 }
 
+/* CONTACTO */
+
+#contenedor-contacto{
+    display: flex;
+    margin-top: 100px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-self: center;
+    background-color: #000000d0;
+    width: 500px;
+    height: 350px;
+    border-radius: 10px;
+    border: 2px solid #ff00e1;
+}
+#redes{
+    display: flex;
+    justify-content: center;
+    background-color: #000000d0;
+    margin: 5px;
+    width: 500px;
+    border-radius: 8px;
+    border: 2px solid #ff00e1;
+}
+
+.red{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    padding: 6px;
+    gap: 5px;
+    width: 100%;
+}
+
+.red a{
+    margin: 0;
+    width: auto;
+}
+
+.red p{
+    margin: 0;
+    margin-left: 5px;
+    color: white;
+    width: max-content;
+}
+
+#redes img{
+    width: 30px;
+    border-radius: 0;
+}
+
+#form-contacto form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+#form-contacto input{
+    width: 100%;
+    height: 25px;
+    font-family:Helvetica, sans-serif;
+    font-size: 15px;
+    border-radius: 8px;
+    border: 2px solid #ff00e1;
+    background-color: #000000d0;
+    color: white;
+}
+
+.form-nombre{
+    grid-column: 1/2;
+    width: 100%;
+}
+
+.form-apellido{
+    grid-column: 2/3;
+    width: 100%;
+}
+
+.form-email{
+    grid-column: 1/3;
+    width: 100%;
+}
+
+.form-boton{
+    grid-column: 1/3;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-boton button{
+    width: 100px;
+    height: 25px;
+    background-color: #003dff;
+    border: 1px solid #ff00e1;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #eee;
+}
+
+.form-mensaje textarea{
+    border: 2px solid #ff00e1;
+    background-color: #000000d0;
+    color: white;
+}
+
+.form-mensaje, .form-mensaje textarea{
+    grid-column: 1/3;
+    width: 100%;
+    resize: none;
+    border-radius: 8px;
+    font-family:Helvetica, sans-serif;
+    font-size: 15px;
+    border-radius: 8px;
+}
+
+#titulo-form{
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    color: #ff00e1;
+    font-weight: 700;
+}
 /* LOGIN */
 #cuenta{
     display: flex;
@@ -586,8 +717,6 @@ img{
     color: black;
     text-align: center;
 }
-
-
 
 
 /* MEDIA QUERIES */
